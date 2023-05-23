@@ -7,5 +7,5 @@ class PostMeta(admin.ModelAdmin):
     list_display = ['title', 'author', 'status']
 
 
-admin.site.register(Post)
+admin.site.register(Post, PostMeta)
 admin.site.unregister(Group)
