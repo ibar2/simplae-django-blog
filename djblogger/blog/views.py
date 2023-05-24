@@ -7,3 +7,4 @@ from . import models
 class homepage(ListView):
     model = models.Post
     template_name = 'blog/home.html'
+    context_object_name = 'posts'
