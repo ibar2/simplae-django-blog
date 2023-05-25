@@ -24,3 +24,7 @@ class factoryPost(factory.django.DjangoModelFactory):
             return x
 
     status = 'published'
+
+
+# creates a 100 posts in the database
+# posts100 = factoryPost.create_batch(100)
