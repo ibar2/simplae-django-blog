@@ -10,25 +10,7 @@
 <div class="container pt-5">
     <div class="row">
         <div class="col-12 col-lg-8">
-            {% for post in posts %}
-                <a href="" class="text-decoration-none infinite-scroll">
-                    <div class="card border-0 pb-3 pb-sm">
-                        <div class="row">
-                            <div class="col-8">
-                                <div class="card-body p-0">
-                                    <div class="pb-2 text-body infinite-scroll-author">{{post.author}}</div>
-                                    <h1 class="mb-1 fs-4 fw-bold text-body">{{post.title|truncatechars:20}}</h1>
-                                    <h2 class="text-muted fs-6 d-none d-sm-block">{{post.subtitle}}</h2>
-                                    <div class="text-muted infinite-scroll-date">{{post.updataedat|date:"M d"}}</div>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <img src="https://picsum.photos/205/115" alt="" class="image-fluid float-end">
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            {% endfor %}
+            {% include 'blog/components/post_list.html' %}
         </div>
         <div class="col-4 d-none d-lg-block"></div>
     </div>

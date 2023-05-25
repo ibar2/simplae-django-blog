@@ -1,4 +1,5 @@
 # from django.shortcuts import render
+from typing import List
 from django.views.generic import ListView
 from . import models
 # Create your views here.
@@ -6,5 +7,11 @@ from . import models
 
 class homepage(ListView):
     model = models.Post
-    template_name = 'blog/home.html'
     context_object_name = 'posts'
+    paginate_by = 10
+
+    def get_template_names(self) -> List[str]:
+        if self.request.htmx:
+            print('hello world')
+            return 'blog/components/post_list.html'
+        return 'blog/home.html'
