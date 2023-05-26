@@ -7,11 +7,10 @@ from . import models
 
 class homepage(ListView):
     model = models.Post
-    context_object_name = 'posts'
+    context_object_name = "posts"
     paginate_by = 10
 
-    def get_template_names(self) -> List[str]:
+    def get_template_names(self):
         if self.request.htmx:
-            print('hello world')
-            return 'blog/components/post_list.html'
-        return 'blog/home.html'
+            return "blog/components/post_list.html"
+        return "blog/home.html"
