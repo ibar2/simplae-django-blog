@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "djblogger.blog",
     "django_htmx",
+    "djblogger.blog",
     'taggit',
 ]
 
