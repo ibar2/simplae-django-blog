@@ -1,0 +1,49 @@
+{% extends 'blog/components/3_columns.html' %}
+
+<!-- left part  -->
+{% block left %}
+{% include "base/second-navbar.html" %}
+{% endblock left %}
+
+<!-- middle part  -->
+{% block middle %}
+<style>
+    .blogger h1 {
+        letter-spacing: -0.6px;
+    }
+
+    .post h1 {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .post p {
+        font-family: Merriweather;
+        font-size: 1.0625rem;
+        line-height: 32px;
+        letter-spacing: 0.2px;
+    }
+</style>
+<div class="blogger center mx-auto " style="max-width:683px ;">
+<div class="text-muted">{{post_content.author}}</div>
+<div  class="text-muted pb-5">{{post_content.createdat|date:"M d"}}</div>
+<h1   class="pb-3 fw-bold">{{post_content.title}}</h1>
+<h2  class="text-muted fs-4 pb-4">{{post_content.subtitle}}</h2>
+<div class='post'>
+{{post_content.content}}
+</div>
+<div class="pt-5 mt-5">
+</div>
+</div>
+
+{% endblock middle %}
+
+
+<!-- right part  -->
+{% block right %}
+
+<div class="col-12">
+    {% comment %} {% include "blog/components/post-list-related.html" %} {% endcomment %}
+heelo
+</div>
+{% endblock right %}

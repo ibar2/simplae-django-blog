@@ -23,3 +23,11 @@ class postFactory(factory.django.DjangoModelFactory):
     author = factory.SubFactory(userfactory)
     content = 'xxx'
     status = 'published'
+
+    @factory.post_generation
+    def tags(self, created, extracted, **kwargs):
+        if not created:
+            return
+
+        if extracted:
+            self.tags.add(*extracted)
