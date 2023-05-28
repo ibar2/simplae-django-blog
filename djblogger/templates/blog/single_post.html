@@ -30,7 +30,7 @@
 <h1   class="pb-3 fw-bold">{{post_content.title}}</h1>
 <h2  class="text-muted fs-4 pb-4">{{post_content.subtitle}}</h2>
 <div class='post'>
-{{post_content.content}}
+{{post_content.content | markdown }}
 </div>
 <div class="pt-5 mt-5">
 </div>
