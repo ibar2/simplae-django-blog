@@ -43,7 +43,9 @@
 {% block right %}
 
 <div class="col-12">
-    {% comment %} {% include "blog/components/post-list-related.html" %} {% endcomment %}
-heelo
+    {% side_tag_cloud %}
+    <div class="col-12">
+            {% include "blog/components/post_elements_related.html" %}
+    </div>
 </div>
 {% endblock right %}
