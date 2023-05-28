@@ -30,7 +30,7 @@
 <h1   class="pb-3 fw-bold">{{post_content.title}}</h1>
 <h2  class="text-muted fs-4 pb-4">{{post_content.subtitle}}</h2>
 <div class='post'>
-{{post_content.content}}
+{{post_content.content | markdown }}
 </div>
 <div class="pt-5 mt-5">
 </div>
@@ -43,7 +43,9 @@
 {% block right %}
 
 <div class="col-12">
-    {% comment %} {% include "blog/components/post-list-related.html" %} {% endcomment %}
-heelo
+    {% side_tag_cloud %}
+    <div class="col-12">
+            {% include "blog/components/post_elements_related.html" %}
+    </div>
 </div>
 {% endblock right %}

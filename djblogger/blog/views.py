@@ -18,6 +18,8 @@ class homepage(ListView):
 
 def post_single(req, post):
     post = get_object_or_404(models.Post, slug=post, status='published')
+    related = models.Post.objects.filter(author=post.author)[:5]
     return render(req, 'blog/single_post.html', {
-        'post_content': post
+        'post_content': post,
+        'related': related
     })
