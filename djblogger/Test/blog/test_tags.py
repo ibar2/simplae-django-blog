@@ -18,4 +18,3 @@ class TestListTags:
         url = reverse('tag-list', kwargs={'tag': m.tags.name})
         res = client.get(url, **header)
         assertTemplateUsed(res, "blog/components/tag_post_list.html")
-
