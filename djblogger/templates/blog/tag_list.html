@@ -1,0 +1,24 @@
+{% extends 'blog/components/3_columns.html' %}
+
+<!-- left part  -->
+{% block left %}
+{% include "base/second-navbar.html" %}
+{% endblock left %}
+
+<!-- middle part  -->
+{% block middle %}
+{% include 'blog/components/tag_post_list.html' %}
+
+{% endblock middle %}
+
+
+<!-- right part  -->
+{% block right %}
+
+<div class="col-12">
+    {% side_tag_cloud %}
+    <div class="col-12">
+            {% include "blog/components/post_elements_related.html" %}
+    </div>
+</div>
+{% endblock right %}
