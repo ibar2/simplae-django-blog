@@ -2,7 +2,7 @@ from django.db.models.query import QuerySet
 from django.shortcuts import render, get_object_or_404
 # from typing import Any, List
 from django.views.generic import ListView
-from . import models
+from . import models, forms
 # Create your views here.
 
 
@@ -39,3 +39,19 @@ class taglist(ListView):
         if self.request.htmx:
             return "blog/components/tag_post_list.html"
         return "blog/tag_list.html"
+
+
+class search(ListView):
+    model = models.Post
+    paginate_by = 10
+    context_object_name = 'posts'
+    form_class = forms.searchforms
+
+    def get_queryset(self):
+        form = self.form_class(self.request.GET)
+        return []
+
+    def get_template_names(self):
+        if self.request.htmx:
+            return "blog/components/tag_post_list.html"
+        return "blog/search.html"
