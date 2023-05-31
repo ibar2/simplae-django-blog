@@ -49,6 +49,10 @@ class search(ListView):
 
     def get_queryset(self):
         form = self.form_class(self.request.GET)
+        if form.is_valid():
+            return models.Post.objects.filter(
+                title__icontains=form.cleaned_data['searchfield']
+            )
         return []
 
     def get_template_names(self):
