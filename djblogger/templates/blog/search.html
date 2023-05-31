@@ -1,3 +1,20 @@
-{% for post in posts %}
-<h2>{{post.title}}</h2>
-{% endfor %}
+{% extends 'blog/components/3_columns.html' %}
+
+<!-- left part  -->
+{% block left %}
+{% include "base/second-navbar.html" %}
+{% endblock left %}
+
+<!-- middle part  -->
+{% block middle %}
+<div style='margin-top:50px;'></div>
+{% include 'blog/components/post_elements_search.html' %}
+
+{% endblock middle %}
+
+
+<!-- right part  -->
+{% block right %}
+
+
+{% endblock right %}
